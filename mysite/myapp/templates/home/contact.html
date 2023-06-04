@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %}
+{% block title %}Contact Us{% endblock %}
+{% block content %}
+<section class="bg-gray-100 py-8 px-4">
+    <div class="max-w-lg mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+      <form method="POST" action="{% url 'save_message' %}">
+        {% csrf_token %}
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="name">Name</label>
+          <input class="border rounded-lg px-3 py-2 w-full" type="text" id="name" name="name" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="email">Email</label>
+          <input class="border rounded-lg px-3 py-2 w-full" type="email" id="email" name="email" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="message">Message</label>
+          <textarea class="border rounded-lg px-3 py-2 w-full" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold px-4 py-2 rounded-lg" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+{% endblock %}

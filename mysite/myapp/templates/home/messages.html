@@ -1,0 +1,46 @@
+{% extends 'home/base.html' %}
+{% block title %}Success{% endblock %}
+{% block content %}
+
+  {% if messages %}
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+        <div class="max-w-lg mx-auto text-center">
+          <h2 class="text-3xl font-semibold text-gray-800">Messages</h2>
+          <ul>
+            {% for message in messages %}
+              <li class="mt-4 text-gray-600">
+                <strong>Name:</strong> {{ message.name }}<br>
+                <strong>Email:</strong> {{ message.email }}<br>
+                <strong>Message:</strong> {{ message.message }}<br>
+                {% if message.message_id %}
+                  <a href="{% url 'edit_message' message.message_id %}" class="text-white bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg mr-4">
+                    Edit
+                  </a>
+                  <form action="{% url 'delete_message' message.message_id %}" method="POST" class="inline">
+                    {% csrf_token %}
+                    <input type="hidden" name="message_id" value="{{ message.email }}">
+                    <button type="submit" class="text-blue-500 border border-blue-500 hover:border-blue-600 px-6 py-3 rounded-lg">
+                      Delete
+                    </button>
+                  </form>
+                {% endif %}
+                
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      
+</section>
+{% else %}
+<section class="bg-gray-100 py-12">
+<div class="container mx-auto px-4">
+    <div class="max-w-lg mx-auto text-center">
+        <h2 class="text-3xl font-semibold text-gray-800">No messages loaded.!</h2>
+</div>
+</div>
+</section>
+{% endif %}
+
+{% endblock %}

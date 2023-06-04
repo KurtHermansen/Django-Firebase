@@ -1,0 +1,39 @@
+{% extends 'home/base.html' %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<section class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-lg mx-auto text-center">
+        <h2 class="text-3xl font-semibold text-gray-800">Sign Up Today</h2>
+        <p class="mt-4 text-gray-600">Create an account to start using our services</p>
+        <form method="POST" action="{% url 'save_user_info' %}" class="mt-8">
+        {% csrf_token %}
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <label class="block text-gray-700 font-semibold mb-2" for="first-name">First Name</label>
+              <input class="border rounded-lg px-3 py-2 w-full" type="text" id="first-name" name="first-name">
+            </div>
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <label class="block text-gray-700 font-semibold mb-2" for="last-name">Last Name</label>
+              <input class="border rounded-lg px-3 py-2 w-full" type="text" id="last-name" name="last-name">
+            </div>
+          </div>
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <label class="block text-gray-700 font-semibold mb-2" for="email">Email</label>
+              <input class="border rounded-lg px-3 py-2 w-full" type="email" id="email" name="email">
+            </div>
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <label class="block text-gray-700 font-semibold mb-2" for="password">Password</label>
+              <input class="border rounded-lg px-3 py-2 w-full" type="password" id="password" name="password">
+            </div>
+          </div>
+          <div class="mt-6">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg mr-4" type="submit">Sign Up</button>
+            <button class="border border-blue-500 hover:border-blue-600 text-blue-500 font-semibold px-6 py-3 rounded-lg" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}

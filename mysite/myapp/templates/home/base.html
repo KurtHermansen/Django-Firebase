@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %} {% endblock %} | Django Site</title>
+</head>
+<body>
+    <nav class="bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+              <a href="{% url 'index' %}" class="flex-shrink-0 text-white">
+                My Django Website
+              </a>
+              <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                  <a href="{% url 'index' %}" class="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                  <a href="{% url 'about' %}" class="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                  <a href="{% url 'contact' %}" class="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                  <a href="{% url 'messages' %}" class="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">Messages</a>
+                  <a href="{% url 'users' %}" class="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">Users</a>
+                </div>
+              </div>
+            </div>
+            <div class="-mr-2 flex md:hidden">
+              <button type="button" class="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <!-- Heroicon name: menu -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+    <div class="py-6 px-6">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer class="bg-gray-800 py-4">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between items-center">
+            <p class="text-gray-400">Copyright © 2023</p>
+            <nav class="flex items-center space-x-4">
+              <a href="{% url 'index' %}" class="text-gray-400 hover:text-white">Home</a>
+              <a href="{% url 'about' %}" class="text-gray-400 hover:text-white">About</a>
+              <a href="{% url 'contact' %}" class="text-gray-400 hover:text-white">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>
