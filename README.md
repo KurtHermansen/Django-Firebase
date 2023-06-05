@@ -7,7 +7,7 @@ Our website aims to provide a seamless user experience, with a user-friendly int
 To enhance the functionality of our Django website, we have integrated it with Firebase and Firestore cloud database. Firebase provides a comprehensive suite of backend services, including authentication, real-time database, cloud storage, and more. Firestore is a NoSQL document database offered by Firebase, which allows us to store and sync data in real-time.
 
 
-[Django Website Demo Video](https://youtu.be/PzsN6X8f1xA)
+[Django Website Demo Video](https://youtu.be/KHMKU2vNMZw)
 
 
 # Cloud Database
@@ -45,6 +45,9 @@ The website includes a message page where all the messages submitted can be view
 * Git / Github
 * Django
 * Tailwind CSS
+* Firebase
+* Firestore
+* Google Cloud
 
 # Useful Websites
 
@@ -53,11 +56,14 @@ The website includes a message page where all the messages submitted can be view
 * [Django Documentation](https://docs.djangoproject.com/en/4.2/)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [FreeCodeCamp.org (YouTube Tutorial)](https://www.youtube.com/watch?v=ZxMB6Njs3ck)
+* [Firebase](https://console.firebase.google.com/)
+* [Google Cloud](https://console.cloud.google.com/)
+* [Firestore Documentation](https://firebase.google.com/docs/firestore/manage-data/add-data?hl=en&authuser=0)
 
 
 
 # Future Work
 
-* Database Linking
+* Deleting data and Editing data
 * Authentication
 * Sessions for Login users
