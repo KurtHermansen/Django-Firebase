@@ -1,9 +1,5 @@
 from django.shortcuts import render
-
-from django.shortcuts import render
 from firebase_admin import firestore
-
-
 
 
 def save_message(request):
